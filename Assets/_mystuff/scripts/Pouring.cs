@@ -10,7 +10,7 @@ public class Pouring : MonoBehaviour
     public GameObject streamPrefab = null;
 
     private bool isPouring = false;
-    private Stream currentStream = null;
+    //private Stream currentStream = null;
 
 
     private void Update()

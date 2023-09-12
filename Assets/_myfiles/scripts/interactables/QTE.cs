@@ -14,14 +14,14 @@ public class QTE : MonoBehaviour
 
     bool freeze;
 
-    public bool fastClick; 
+    public bool fastClick;
     public int slowSpd;
 
     KeyCode key;
-    KeyCode[] availableOptions = { KeyCode.Alpha1, KeyCode.Alpha2 }; 
+    KeyCode[] availableOptions = { KeyCode.Alpha1, KeyCode.Alpha2 };
     void Start()
     {
-        
+       StartCoroutine(Wait());
 
         int rand = Random.Range(0, 2);
         key = availableOptions[rand];
@@ -38,7 +38,7 @@ public class QTE : MonoBehaviour
 
 
     void Update()
-    {    
+    {
         if (!freeze)
         {
             knifeSlider.value = Mathf.MoveTowards(knifeSlider.value, 0, slowSpd * Time.deltaTime);
@@ -64,7 +64,7 @@ public class QTE : MonoBehaviour
             {
                 buttonSpec.text = "Chopped!";
 
-                
+
                 freeze = true;
             }
         }
@@ -74,5 +74,11 @@ public class QTE : MonoBehaviour
             buttonSpec.text = "Failed Chopping";
             freeze = true;
         }
+    }
+
+    IEnumerator Wait()
+    {
+
+        yield return new WaitForSeconds(10);
     }
 }
