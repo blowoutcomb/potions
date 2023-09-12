@@ -1759,7 +1759,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2060,6 +2060,7 @@ MonoBehaviour:
   choppedHerb: {fileID: 8034371608476551827, guid: 52367dbdf961daf4a91955f09bbc7a8a,
     type: 3}
   itemSpawn: {fileID: 730023969}
+  QTETrigger: {fileID: 1393929955}
   fastClick: 1
   slowSpd: 1
 --- !u!114 &1482297412

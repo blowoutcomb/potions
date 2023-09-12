@@ -12,6 +12,7 @@ public class QTE : MonoBehaviour
     public GameObject choppedHerb;
     public GameObject itemSpawn;
 
+    public GameObject QTETrigger;
     bool freeze;
 
     public bool fastClick;
@@ -80,5 +81,10 @@ public class QTE : MonoBehaviour
     {
 
         yield return new WaitForSeconds(10);
+    }
+
+    internal void StartQTE(GameObject gameObject)
+    {
+        Debug.Log($"qte trigged with item: {gameObject.name}");
     }
 }
