@@ -32,17 +32,13 @@ public class MouseDrag : MonoBehaviour
     }
     */
 
-    bool inQteRange = false;
 
     Rigidbody body;
 
-    private QTE qte;
+   
     public Vector3 mouseSpeed = Vector3.zero;
     public Vector3 lastMousePos = Vector3.zero;
-    private void Awake()
-    {
-        qte = FindObjectOfType<QTE>(); 
-    }
+   
     private void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -68,29 +64,12 @@ public class MouseDrag : MonoBehaviour
         body.isKinematic = true;
     }
 
+   
     private void OnMouseUp()
     {
         body.isKinematic = false;
 
-        if (inQteRange)
-        {
-            qte.StartQTE(gameObject);
-        }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject == qte.QTETrigger)
-        {
-            inQteRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == qte.QTETrigger)
-        {
-            inQteRange = false;
-        }
-    }
+  
 }

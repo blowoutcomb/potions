@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,16 +14,19 @@ public class QTE : MonoBehaviour
     public GameObject itemSpawn;
 
     public GameObject QTETrigger;
-    bool freeze;
 
+    bool freeze;
+    bool isinQte = false;
     public bool fastClick;
+
     public int slowSpd;
 
     KeyCode key;
     KeyCode[] availableOptions = { KeyCode.Alpha1, KeyCode.Alpha2 };
+
+
     void Start()
     {
-       StartCoroutine(Wait());
 
         int rand = Random.Range(0, 2);
         key = availableOptions[rand];
@@ -40,6 +44,9 @@ public class QTE : MonoBehaviour
 
     void Update()
     {
+
+        ChopQTE();
+
         if (!freeze)
         {
             knifeSlider.value = Mathf.MoveTowards(knifeSlider.value, 0, slowSpd * Time.deltaTime);
@@ -77,14 +84,40 @@ public class QTE : MonoBehaviour
         }
     }
 
-    IEnumerator Wait()
+    private void ChopQTE()
     {
 
-        yield return new WaitForSeconds(10);
+
+
     }
 
     internal void StartQTE(GameObject gameObject)
     {
-        Debug.Log($"qte trigged with item: {gameObject.name}");
+        if (gameObject.name.Contains("Herb"))
+        {
+            isinQte = true;
+            Debug.Log("is in qte hdhdhdhdahhahah");
+
+            Debug.Log($"qte trigged with item: {gameObject.name}");
+        }
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == QTETrigger)
+        {
+            StartQTE(gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == QTETrigger)
+        {
+            isinQte = false;
+            Debug.Log("nuh uh");
+        }
     }
 }
