@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class QTE : MonoBehaviour
 {
-
     private MouseDrag mouseDrag;
     public Slider knifeSlider;
     public TextMeshProUGUI buttonSpec;
 
     public GameObject choppedHerb;
+    public GameObject boomHerb;
     public GameObject itemSpawn;
 
     public GameObject QTETrigger;
@@ -20,7 +20,7 @@ public class QTE : MonoBehaviour
     bool freeze;
 
     public bool fastClick;
-    // public bool inQTE;
+    
     public int slowSpd;
 
     KeyCode key;
@@ -29,6 +29,8 @@ public class QTE : MonoBehaviour
 
     void Start()
     {
+
+        knifeSlider.gameObject.SetActive(false);
 
         int rand = Random.Range(0, 2);
         key = availableOptions[rand];
@@ -55,8 +57,7 @@ public class QTE : MonoBehaviour
 
     private void ChopQTE()
     {
-
-
+        knifeSlider.gameObject.SetActive(true);
         if (!freeze)
         {
             knifeSlider.value = Mathf.MoveTowards(knifeSlider.value, 0, slowSpd * Time.deltaTime);
@@ -70,12 +71,13 @@ public class QTE : MonoBehaviour
                 if (knifeSlider.value == 10)
                 {
                     buttonSpec.text = "Chopped";
+                    Destroy(boomHerb);
                     Instantiate(choppedHerb, itemSpawn.transform.position, Quaternion.Euler(0, 0, 0));
                     freeze = true;
                 }
             }
         }
-
+        
         if (!fastClick)
         {
             if (Input.GetKeyDown(key) && knifeSlider.value > 0)
@@ -92,8 +94,6 @@ public class QTE : MonoBehaviour
             buttonSpec.text = "Failed Chopping";
             freeze = true;
         }
-
-
     }
 
     internal void StartQTE(GameObject gameObject)
@@ -102,13 +102,13 @@ public class QTE : MonoBehaviour
         
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.name.Contains("Herb"))
         {
             inQteRange = true;
+            boomHerb = other.gameObject;
          
         }
     }

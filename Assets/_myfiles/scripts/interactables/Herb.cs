@@ -8,9 +8,10 @@ public class Herb : MonoBehaviour
     public GameObject herbSpawn;
 
 
-    private void OnMouseDown()
+    private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("click");
+
+        Debug.Log("leaving");
         Instantiate(herbObj, herbSpawn.transform.position, herbObj.rotation);
     }
 }
