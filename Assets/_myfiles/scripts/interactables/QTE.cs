@@ -18,9 +18,6 @@ public class QTE : MonoBehaviour
     public GameObject QTETrigger;
 
     bool freeze;
-
-    public bool fastClick;
-    
     public int slowSpd;
 
     KeyCode key;
@@ -29,22 +26,10 @@ public class QTE : MonoBehaviour
 
     void Start()
     {
-
         knifeSlider.gameObject.SetActive(false);
 
-        int rand = Random.Range(0, 2);
-        key = availableOptions[rand];
-        buttonSpec.text = availableOptions[rand].ToString();
-        if (fastClick)
-        {
-            knifeSlider.value = 5;
-        }
-        else
-        {
-            knifeSlider.value = 10;
-        }
+        SetSliderVal();
     }
-
 
     void Update()
     {
@@ -63,29 +48,17 @@ public class QTE : MonoBehaviour
             knifeSlider.value = Mathf.MoveTowards(knifeSlider.value, 0, slowSpd * Time.deltaTime);
         }
 
-        if (fastClick)
-        {
-            if (Input.GetKeyDown(key) && knifeSlider.value > 0)
-            {
-                knifeSlider.value += 1;
-                if (knifeSlider.value == 10)
-                {
-                    buttonSpec.text = "Chopped";
-                    Destroy(boomHerb);
-                    Instantiate(choppedHerb, itemSpawn.transform.position, Quaternion.Euler(0, 0, 0));
-                    freeze = true;
-                }
-            }
-        }
         
-        if (!fastClick)
+        if (Input.GetKeyDown(key) && knifeSlider.value > 0)
         {
-            if (Input.GetKeyDown(key) && knifeSlider.value > 0)
+                knifeSlider.value += 1;
+            if (knifeSlider.value == 10)
             {
-                buttonSpec.text = "Chopped!";
-
-
+                buttonSpec.text = "Chopped";
+                Destroy(boomHerb);
+                Instantiate(choppedHerb, itemSpawn.transform.position, Quaternion.Euler(0, 0, 0));
                 freeze = true;
+
             }
         }
 
@@ -94,6 +67,15 @@ public class QTE : MonoBehaviour
             buttonSpec.text = "Failed Chopping";
             freeze = true;
         }
+    }
+
+    void SetSliderVal()
+    {
+    
+        int rand = Random.Range(0, 2);
+        key = availableOptions[rand];
+        buttonSpec.text = availableOptions[rand].ToString();
+        knifeSlider.value = 10;
     }
 
     internal void StartQTE(GameObject gameObject)
@@ -107,9 +89,10 @@ public class QTE : MonoBehaviour
 
         if (other.name.Contains("Herb"))
         {
+            
             inQteRange = true;
             boomHerb = other.gameObject;
-         
+
         }
     }
 
@@ -119,6 +102,13 @@ public class QTE : MonoBehaviour
         if (other.gameObject == QTETrigger)
         {
             inQteRange = false;
+
+        }
+
+        if (other.name.Contains("choppedHerb"))
+        {
+            knifeSlider.gameObject.SetActive(false);
+            SetSliderVal();
         }
     }
 

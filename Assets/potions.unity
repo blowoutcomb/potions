@@ -1950,9 +1950,9 @@ MonoBehaviour:
   buttonSpec: {fileID: 400309134}
   choppedHerb: {fileID: 8034371608476551827, guid: 52367dbdf961daf4a91955f09bbc7a8a,
     type: 3}
+  boomHerb: {fileID: 0}
   itemSpawn: {fileID: 730023969}
   QTETrigger: {fileID: 1393929955}
-  fastClick: 1
   slowSpd: 1
 --- !u!1 &1462670070
 GameObject:
@@ -2399,10 +2399,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5.54
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1750870303}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1760555870
 GameObject:
   m_ObjectHideFlags: 0

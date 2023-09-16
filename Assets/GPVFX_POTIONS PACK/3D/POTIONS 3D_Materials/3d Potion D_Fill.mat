@@ -55,8 +55,8 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Parallax: 0.02
-    - _WobbleX: 9.071064e-12
-    - _WobbleZ: -7.165805e-10
+    - _WobbleX: -6.484e-42
+    - _WobbleZ: -1.3249e-41
     - _fresnelC: 1
     m_Colors:
     - _Color: {r: 1, g: 0.9724138, b: 0, a: 1}
