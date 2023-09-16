@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSpeed: {x: 0, y: 0, z: 0}
   lastMousePos: {x: 0, y: 0, z: 0}
+  inQteRange: 1
 --- !u!54 &2991913313254582296
 Rigidbody:
   m_ObjectHideFlags: 0

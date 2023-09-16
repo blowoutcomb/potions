@@ -114,8 +114,8 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0
-    - _WobbleX: 0.004800693
-    - _WobbleZ: 0.004914752
+    - _WobbleX: 0.00011712342
+    - _WobbleZ: -0.00031265017
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1

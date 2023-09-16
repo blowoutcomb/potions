@@ -3,7 +3,11 @@ guid: 0b4e99f1f8827b444a12f088451cece2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - herbObj: {fileID: 7545627098986906011, guid: 91b4a31ab00ceb84a897212c92a5f63e,
+      type: 3}
+  - herbSpawn: {fileID: 8034371608476551827, guid: 52367dbdf961daf4a91955f09bbc7a8a,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

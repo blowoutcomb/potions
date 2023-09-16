@@ -1847,10 +1847,10 @@ MonoBehaviour:
   buttonSpec: {fileID: 400309134}
   choppedHerb: {fileID: 8034371608476551827, guid: 52367dbdf961daf4a91955f09bbc7a8a,
     type: 3}
-  itemSpawn: {fileID: 1341721302}
+  itemSpawn: {fileID: 730023969}
   QTETrigger: {fileID: 1393929955}
   fastClick: 1
-  slowSpd: 3
+  slowSpd: 1
 --- !u!1 &1462670070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,6 +2571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: potionBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113685336331249140, guid: 45ec6da611d4f67438096e8e8bbe095e,
+        type: 3}
+      propertyPath: inQteRange
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6747575468244696052, guid: 45ec6da611d4f67438096e8e8bbe095e,
         type: 3}

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class QTE : MonoBehaviour
 {
+
+    private MouseDrag mouseDrag;
     public Slider knifeSlider;
     public TextMeshProUGUI buttonSpec;
 
@@ -16,14 +18,14 @@ public class QTE : MonoBehaviour
     public GameObject QTETrigger;
 
     bool freeze;
-    bool isinQte = false;
-    public bool fastClick;
 
+    public bool fastClick;
+    // public bool inQTE;
     public int slowSpd;
 
     KeyCode key;
     KeyCode[] availableOptions = { KeyCode.Alpha1, KeyCode.Alpha2 };
-
+    private bool inQteRange;
 
     void Start()
     {
@@ -44,8 +46,16 @@ public class QTE : MonoBehaviour
 
     void Update()
     {
+        if (inQteRange)
+        {
 
-        ChopQTE();
+          ChopQTE();
+        }
+    }
+
+    private void ChopQTE()
+    {
+
 
         if (!freeze)
         {
@@ -82,42 +92,34 @@ public class QTE : MonoBehaviour
             buttonSpec.text = "Failed Chopping";
             freeze = true;
         }
-    }
-
-    private void ChopQTE()
-    {
-
 
 
     }
 
     internal void StartQTE(GameObject gameObject)
     {
-        if (gameObject.name.Contains("Herb"))
-        {
-            isinQte = true;
-            Debug.Log("is in qte hdhdhdhdahhahah");
-
-            Debug.Log($"qte trigged with item: {gameObject.name}");
-        }
+        inQteRange = true;
+        
     }
-
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == QTETrigger)
+
+        if (other.name.Contains("Herb"))
         {
-            StartQTE(gameObject);
+            inQteRange = true;
+         
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.gameObject == QTETrigger)
         {
-            isinQte = false;
-            Debug.Log("nuh uh");
+            inQteRange = false;
         }
     }
+
 }
