@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSpeed: {x: 0, y: 0, z: 0}
   lastMousePos: {x: 0, y: 0, z: 0}
+  inQteRange: 0
 --- !u!54 &2724398670555134564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178,5 +179,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.06, y: 10.62, z: 13.44}
-  m_Center: {x: -1.56, y: 4.05, z: 0}
+  m_Size: {x: 11.06, y: 8.04, z: 10.24}
+  m_Center: {x: -1.56, y: 4.27, z: 1}

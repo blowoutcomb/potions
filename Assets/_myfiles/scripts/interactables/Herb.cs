@@ -11,7 +11,6 @@ public class Herb : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        Debug.Log("leaving");
         Instantiate(herbObj, herbSpawn.transform.position, herbObj.rotation);
     }
 }
