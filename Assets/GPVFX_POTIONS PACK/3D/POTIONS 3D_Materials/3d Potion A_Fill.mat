@@ -8,20 +8,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 3d Potion A_Fill
-  m_Shader: {fileID: -6465566751694194690, guid: 8d64978b8d31c734a994b512a0d65575,
+  m_Shader: {fileID: -6465566751694194690, guid: 45424441b99a9294994794c764b4099b,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _ALPHATEST_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: TransparentCutout
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -51,6 +49,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: f4853b0d577944e3cbb45310ad891fb3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0.27}
+    - _Main_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -79,6 +81,7 @@ Material:
     m_Floats:
     - _AlphaClip: 1
     - _AlphaToMask: 1
+    - _Amplitude: 0.88
     - _Blend: 0
     - _BumpScale: 1
     - _CastShadows: 1
@@ -87,6 +90,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Fill: 0
+    - _FoamWidth: 0.001
+    - _Foam_Smoothness: 1.65
+    - _Frequency: 1.66
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -96,20 +102,25 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Rim_Power: 7.9
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0
-    - _WobbleX: 0.000000046432103
-    - _WobbleZ: 0.000000046432103
+    - _WobbleX: -0
+    - _WobbleZ: 0
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     - _fresnelC: 3
     m_Colors:
+    - _BottomColor: {r: 0.0141509175, g: 0.06596747, b: 1, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.78431374, g: 0.42352942, b: 0.6416634, a: 1}
+    - _Rim_Color: {r: 0.20901564, g: 0.7264151, b: 0.23627374, a: 1}
+    - _TopColor: {r: 0.13705945, g: 0.2716368, b: 0.3773585, a: 1}
     - _fresnel: {r: 0.0039215535, g: 0.32963493, b: 0.8784314, a: 0}
     - _liquid: {r: 0.7735849, g: 0.29556784, b: 0.4303224, a: 0}
     - _surface: {r: 0.26666668, g: 0.32941177, b: 0.29559153, a: 0}

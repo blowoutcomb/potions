@@ -35,7 +35,6 @@ public class QTE : MonoBehaviour
     {
         if (inQteRange)
         {
-
           ChopQTE();
         }
     }
@@ -61,12 +60,6 @@ public class QTE : MonoBehaviour
                 freeze = true;
 
             }
-
-            //else if (knifeSlider.value == 10 && freeze)
-            //{
-            //}
-
-
         }
 
         if (knifeSlider.value == 0)
@@ -74,8 +67,6 @@ public class QTE : MonoBehaviour
             buttonSpec.text = "Failed Chopping";
             freeze = true;
         }
-
-        
     }
 
     void SetSliderVal()

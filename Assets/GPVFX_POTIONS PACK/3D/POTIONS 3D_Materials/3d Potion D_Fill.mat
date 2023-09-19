@@ -21,20 +21,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 3d Potion D_Fill
-  m_Shader: {fileID: -6465566751694194690, guid: 8d64978b8d31c734a994b512a0d65575,
+  m_Shader: {fileID: -6465566751694194690, guid: 45424441b99a9294994794c764b4099b,
     type: 3}
   m_Parent: {fileID: 2100000, guid: 572fdc46c5750d34ba3feb34a5cbc823, type: 2}
   m_ModifiedSerializedProperties: 18
-  m_ValidKeywords:
-  - _ALPHATEST_ON
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: TransparentCutout
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -51,16 +49,22 @@ Material:
     m_Ints: []
     m_Floats:
     - _Fill: 0
+    - _FoamWidth: 0.29
+    - _Foam_Smoothness: 0.72
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Parallax: 0.02
-    - _WobbleX: -1.1809142e-20
-    - _WobbleZ: -2.1028598e-20
+    - _WobbleX: 0
+    - _WobbleZ: -0
     - _fresnelC: 1
     m_Colors:
+    - _BottomColor: {r: 0.11320752, g: 0.07636168, b: 0.078187846, a: 1}
     - _Color: {r: 1, g: 0.9724138, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 0.93103445, b: 0, a: 1}
+    - _FoamColor: {r: 0.3018868, g: 0.1723033, b: 0.17610952, a: 1}
+    - _Rim_Color: {r: 0.6279815, g: 0.9056604, b: 0.72456557, a: 1}
+    - _TopColor: {r: 0.0989231, g: 0.122641504, b: 0.11005025, a: 1}
     - _fresnel: {r: 0.4056604, g: 0.08610717, b: 0.089993946, a: 0}
     - _liquid: {r: 0.4056604, g: 0.027746422, b: 0, a: 0}
     - _surface: {r: 0.8584906, g: 0.6040897, b: 0.10123708, a: 0}
